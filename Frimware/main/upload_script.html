@@ -1,0 +1,251 @@
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+        th, td {
+        background-color: #96D4D4;
+    }
+</style>
+<body>
+    <h2>ESP32 HTTP AJAX Server</h2>
+        <br/><br/>
+        <!-- <div id="response">
+            <button id="redButton" type="button" onclick="toggleLED('red')">Turn ON RED</button>
+            <button id="greenButton" type="button" onclick="toggleLED('green')">Turn ON GREEN</button>
+            <button id="blueButton" type="button" onclick="toggleLED('blue')">Turn ON BLUE</button>
+            <br/><br/>
+        </div> -->
+        <div id="response">
+            <button id="redButton" type="button" style="color: #000000; background-color: #ff7878;" onclick="toggleLED('red')">Turn ON RED</button>
+            <button id="greenButton" type="button" style="color: #000000; background-color: #75ff75;" onclick="toggleLED('green')">Turn ON GREEN</button>
+            <button id="blueButton" type="button"  style="color: #000000; background-color: #4040ff;" onclick="toggleLED('blue')">Turn ON BLUE</button>
+            <br/><br/>
+            <button id="action1Button" type="button" onclick="toggleLED('action1')">Turn ON ACTION1</button>
+            <button id="action2Button" type="button" onclick="toggleLED('action2')">Turn ON ACTION2</button>
+            <button id="action3Button" type="button" onclick="toggleLED('action3')">Turn ON ACTION3</button>
+            <button id="action4Button" type="button" onclick="toggleLED('action4')">Turn ON ACTION4</button>
+        </div>
+        <br/><br/>
+    <table style="width:50%">
+        <tr>
+            <th>Work time</th>
+            <th>Total memory</th>
+            <th>Free memory</th>
+            <th>Battery status</th>
+        </tr>
+        <tr>
+            <td id="work_time">--</td>
+            <td id="total_memory">--</td>
+            <td id="free_memory">--</td>
+            <td id="battery_status">--</td>
+        </tr>
+    </table>
+    <br><br>
+    <table style="width:50%">
+        <tr>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Preasure</th>
+        </tr>
+        <tr>
+            <td id="temperature">--</td>
+            <td id="humidity">--</td>
+            <td id="preasure">--</td>
+        </tr>
+    </table>
+    <br><br>
+    <table style="width:50%">
+        <tr>
+            <th>Hour</th>
+            <th>Minute</th>
+            <th>Second</th>
+            <th>Day</th>
+            <th>Month</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td id="hour">--</td>
+            <td id="minute">--</td>
+            <td id="second">--</td>
+            <td id="day">--</td>
+            <td id="month">--</td>
+            <td id="year">--</td>
+        </tr>
+    </table>
+    <table style="width:50%">
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Altitude</th>
+            <th>Speed</th>
+            <th>Sats in view</th>
+        </tr>
+        <tr>
+            <td id="latitude">--</td>
+            <td id="longitude">--</td>
+            <td id="altitude">--</td>
+            <td id="speed">--</td>
+            <td id="sats_in_view">--</td>
+        </tr>
+    </table>
+    <br><br>
+    <br><br>
+</body>
+<table class="fixed" border="0">
+    <col width="1000px" /><col width="500px" />
+    <tr><td>
+    </td><td>
+        <table border="0">
+            <tr>
+                <td>
+                    <label for="newfile">Upload a file</label>
+                </td>
+                <td colspan="2">
+                    <input id="newfile" type="file" onchange="setpath()" style="width:100%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="filepath">Set path on server</label>
+                </td>
+                <td>
+                    <input id="filepath" type="text" style="width:100%;">
+                </td>
+                <td>
+                    <button id="upload" type="button" onclick="upload()">Upload</button>
+                </td>
+            </tr>
+        </table>
+    </td></tr>
+    <head>
+<script>
+function setpath() {
+    var default_path = document.getElementById("newfile").files[0].name;
+    document.getElementById("filepath").value = default_path;
+}
+function upload() {
+    var filePath = document.getElementById("filepath").value;
+    var upload_path = "/upload/" + filePath;
+    var fileInput = document.getElementById("newfile").files;
+
+    /* Max size of an individual file. Make sure this
+     * value is same as that set in file_server.c */
+    var MAX_FILE_SIZE = 200*1024;
+    var MAX_FILE_SIZE_STR = "200KB";
+
+    if (fileInput.length == 0) {
+        alert("No file selected!");
+    } else if (filePath.length == 0) {
+        alert("File path on server is not set!");
+    } else if (filePath.indexOf(' ') >= 0) {
+        alert("File path on server cannot have spaces!");
+    } else if (filePath[filePath.length-1] == '/') {
+        alert("File name not specified after path!");
+    } else if (fileInput[0].size > 200*1024) {
+        alert("File size must be less than 200KB!");
+    } else {
+        document.getElementById("newfile").disabled = true;
+        document.getElementById("filepath").disabled = true;
+        document.getElementById("upload").disabled = true;
+
+        var file = fileInput[0];
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4) {
+                if (xhttp.status == 200) {
+                    document.open();
+                    document.write(xhttp.responseText);
+                    document.close();
+                } else if (xhttp.status == 0) {
+                    alert("Server closed the connection abruptly!");
+                    location.reload()
+                } else {
+                    alert(xhttp.status + " Error!\n" + xhttp.responseText);
+                    location.reload()
+                }
+            }
+        };
+        xhttp.open("POST", upload_path, true);
+        xhttp.send(file);
+    }
+}
+function fetchData() {
+    fetch('/data', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('work_time').textContent = data.work_time;
+        document.getElementById('total_memory').textContent = data.total_memory;
+        document.getElementById('free_memory').textContent = data.free_memory;
+        document.getElementById('battery_status').textContent = data.battery_status;
+
+        document.getElementById('temperature').textContent = data.temperature;
+        document.getElementById('humidity').textContent = data.humidity;
+        document.getElementById('preasure').textContent = data.preasure;
+
+        document.getElementById('hour').textContent = data.hour;
+        document.getElementById('minute').textContent = data.minute;
+        document.getElementById('second').textContent = data.second;
+        document.getElementById('day').textContent = data.day;
+        document.getElementById('month').textContent = data.month;
+        document.getElementById('year').textContent = data.year;
+
+        document.getElementById('latitude').textContent = data.latitude;
+        document.getElementById('longitude').textContent = data.longitude;
+        document.getElementById('altitude').textContent = data.altitude;
+        document.getElementById('speed').textContent = data.speed;
+        document.getElementById('sats_in_view').textContent = data.sats_in_view;
+    })
+    .catch(error => console.error('Error:', error));
+    }
+    setInterval(fetchData, 1000);
+
+function toggleLED(ledOrAction) {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = this.responseText;
+            var button = document.getElementById(ledOrAction + "Button");
+            if (response.includes(ledOrAction.toUpperCase() + " ON")) {
+                button.innerHTML = "Turn OFF " + ledOrAction.toUpperCase();
+            } else {
+                button.innerHTML = "Turn ON " + ledOrAction.toUpperCase();
+            }
+        }
+    };
+    var buttonState = document.getElementById(ledOrAction + "Button").innerHTML;
+    var state = (buttonState.includes("Turn ON")) ? "on" : "off";
+    var type = (ledOrAction === "red" || ledOrAction === "green" || ledOrAction === "blue") ? "led" : "action";
+    xhttp.open("POST", "/control", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("type=" + type + "&id=" + ledOrAction + "&state=" + state);
+}
+
+function fetchLEDStatus() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            document.getElementById("redButton").innerHTML = response.red ? "Turn OFF RED" : "Turn ON RED";
+            document.getElementById("greenButton").innerHTML = response.green ? "Turn OFF GREEN" : "Turn ON GREEN";
+            document.getElementById("blueButton").innerHTML = response.blue ? "Turn OFF BLUE" : "Turn ON BLUE";
+
+            document.getElementById("action1Button").innerHTML = response.action1 ? "Turn OFF ACTION1" : "Turn ON ACTION1";
+            document.getElementById("action2Button").innerHTML = response.action2 ? "Turn OFF ACTION2" : "Turn ON ACTION2";
+            document.getElementById("action3Button").innerHTML = response.action3 ? "Turn OFF ACTION3" : "Turn ON ACTION3";
+            document.getElementById("action4Button").innerHTML = response.action4 ? "Turn OFF ACTION4" : "Turn ON ACTION4";
+        }
+    };
+    xhttp.open("POST", "/getLEDStatus", true);
+    xhttp.send();
+}
+setInterval(fetchLEDStatus, 1000);                       // Запит статусу кожну секунду
+
+</script>
