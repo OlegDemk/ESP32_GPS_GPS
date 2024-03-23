@@ -1,0 +1,167 @@
+<mxfile host="app.diagrams.net" modified="2024-03-23T10:36:10.734Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="FxOU66tAJlyshaIdVIB5" version="23.1.2" type="device">
+  <diagram name="Сторінка-1" id="lQlykuT76nLz_-_hPbVb">
+    <mxGraphModel dx="2231" dy="1077" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YlhcBeEanbGtURB7-T1P-1" value="ESP32" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d0cee2;strokeColor=#56517e;" vertex="1" parent="1">
+          <mxGeometry x="499" y="220" width="250" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-2" value="GPS&amp;nbsp;&lt;br&gt;&amp;nbsp;GY-GPS6MV2&amp;nbsp;&lt;br&gt;module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="949" y="230" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-3" value="GSM&amp;nbsp;&lt;br&gt;SIM800L module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="949" y="350" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-4" value="MicroSD card" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="949" y="500" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-5" value="BME280" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" vertex="1" parent="1">
+          <mxGeometry x="739" y="820" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-6" value="MPU5060" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" vertex="1" parent="1">
+          <mxGeometry x="739" y="890" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-7" value="LEDs&amp;nbsp;&lt;br&gt;Red, Green, Blue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="484" y="870" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-8" value="USB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;" vertex="1" parent="1">
+          <mxGeometry x="574" y="50" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-9" target="YlhcBeEanbGtURB7-T1P-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-9" target="YlhcBeEanbGtURB7-T1P-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-9" value="Battery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="59" y="270" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-10" value="Charger/protection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;" vertex="1" parent="1">
+          <mxGeometry x="89" y="140" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-11" value="DC/DC Step up (4V)&lt;br&gt;(For GSM module)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="9" y="535" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-12" value="linear voltage stabilizer 3.3 V (for all)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="169" y="535" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-14" value="Firmware and terminal" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="469" y="150" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-16" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-1" target="YlhcBeEanbGtURB7-T1P-8">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="449" y="320" as="sourcePoint" />
+            <mxPoint x="549" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="YlhcBeEanbGtURB7-T1P-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399" y="90" as="sourcePoint" />
+            <mxPoint x="409" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="154" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-18" value="5V" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="359" y="60" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-10" target="YlhcBeEanbGtURB7-T1P-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="339" y="340" as="sourcePoint" />
+            <mxPoint x="389" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.043;exitY=0.567;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-8" target="YlhcBeEanbGtURB7-T1P-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="404" y="90" as="sourcePoint" />
+            <mxPoint x="29" y="375" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="29" y="90" />
+              <mxPoint x="29" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-24" value="Power switcher" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="89" y="380" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-26" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.463;entryY=0.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-24" target="YlhcBeEanbGtURB7-T1P-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="309" y="420" as="sourcePoint" />
+            <mxPoint x="359" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-24" target="YlhcBeEanbGtURB7-T1P-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="309" y="420" as="sourcePoint" />
+            <mxPoint x="359" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-35" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.017;exitY=0.117;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-1" target="YlhcBeEanbGtURB7-T1P-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="859" y="520" as="sourcePoint" />
+            <mxPoint x="879" y="274.9949999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-36" value="UART" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="789" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-37" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1.017;exitY=0.117;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="YlhcBeEanbGtURB7-T1P-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="749" y="394.5" as="sourcePoint" />
+            <mxPoint x="875" y="395.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-38" value="UART" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="789" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-39" value="ON/OFF Switcher" style="shape=or;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1079" y="251.88" width="110" height="46.25" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-40" value="ON/OFF Switcher" style="shape=or;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1079" y="371.88" width="110" height="46.25" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-41" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1.017;exitY=0.117;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="749" y="550" as="sourcePoint" />
+            <mxPoint x="949" y="550.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-42" value="SPI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="829" y="510" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-43" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.598;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-5" target="YlhcBeEanbGtURB7-T1P-1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="619" y="650" as="sourcePoint" />
+            <mxPoint x="719" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-44" value="I2C" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="729" y="730" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-45" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.129;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-1" target="YlhcBeEanbGtURB7-T1P-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="509" y="790" as="sourcePoint" />
+            <mxPoint x="679" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-46" value="GPIOs" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="459" y="770" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-47" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.003;entryY=0.225;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="YlhcBeEanbGtURB7-T1P-48" target="YlhcBeEanbGtURB7-T1P-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="429" y="320" as="sourcePoint" />
+            <mxPoint x="649" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-48" value="voltage divider&lt;br&gt;(get battery voltage)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="289" y="270" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YlhcBeEanbGtURB7-T1P-49" value="ADC" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="434" y="278" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
